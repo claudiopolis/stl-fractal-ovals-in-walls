@@ -1,0 +1,26 @@
+# Example configuration file for 3D Wall-Holer
+#
+# This file demonstrates all available configuration parameters.
+# You can use this with: python -m wallholer input.stl --config example_config.yaml
+
+# Wall Detection Parameters
+# These control how the program identifies thin flat walls in your model
+wall_thickness_threshold: 6.0  # Maximum thickness (mm) for a wall to be considered "thin"
+min_wall_dimension: 20.0       # Minimum width and length (mm) for a wall to be detected
+
+# Oval Hole Parameters
+# These control the size and pattern of the holes
+max_oval_length_z: 70.0        # Maximum length of oval along z-axis (mm) - Level 0 optimized to fit wall
+oval_aspect_ratio: 3           # Ratio of length to width (whole number, e.g., 3 = 3:1)
+min_wall_width: 4.0            # Minimum wall material width between holes and edges (mm)
+num_oval_sizes: 2              # Number of different oval sizes for fractal pattern (2-4 recommended)
+
+# Wall Selection
+# Specify which walls to modify (based on wall IDs from visualization)
+# Run in interactive mode first to see wall IDs, then add them here
+selected_walls: [0, 1, 2]      # List of wall IDs to modify
+
+# Bottom Wall
+# Specify which wall represents the build plate (z=0) of your 3D printer
+# This determines the z-axis direction for oval orientation
+bottom_wall: 0                 # Wall ID that is attached to the build plate
