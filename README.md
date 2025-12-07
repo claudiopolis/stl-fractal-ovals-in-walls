@@ -65,6 +65,10 @@ You can also specify a custom output path:
 python -m wallholer input.stl --config my_config.yaml --output modified.stl
 ```
 
+### Example STL files
+
+Visit this thing at [Thingiverse](https://www.thingiverse.com/thing:7226225) to see a sample STL file before and after.
+
 ### Example Workflow
 
 1. **First run (interactive)** to explore your model:
