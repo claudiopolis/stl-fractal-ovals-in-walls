@@ -18,7 +18,7 @@ class Config:
 
     # Oval hole parameters
     max_oval_length_z: float = 10.0  # mm, maximum length along z-axis
-    oval_aspect_ratio: int = 3  # ratio of length to width (whole number)
+    oval_aspect_ratio: float = 3.0  # ratio of length to width
     min_wall_width: float = 1.0  # mm, minimum material width between holes and edges
     num_oval_sizes: int = 3  # number of different oval sizes
 
@@ -67,9 +67,9 @@ def interactive_config() -> Config:
     if response.strip():
         config.max_oval_length_z = float(response)
 
-    response = input(f"Oval aspect ratio (length/width, whole number) (default: {config.oval_aspect_ratio}): ")
+    response = input(f"Oval aspect ratio (length/width) (default: {config.oval_aspect_ratio}): ")
     if response.strip():
-        config.oval_aspect_ratio = int(response)
+        config.oval_aspect_ratio = float(response)
 
     response = input(f"Minimum wall width between holes and edges in mm (default: {config.min_wall_width}): ")
     if response.strip():
